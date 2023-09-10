@@ -19,8 +19,9 @@ static int App_ResizeWindowEvent(void* data, SDL_Event* event) {
         SDL_Window* win = SDL_GetWindowFromID(event->window.windowID);
         App* app = (App*)data;
         if (win == (SDL_Window*)app->window) {
-            printf("resizing.....\n");
+            //printf("resizing.....\n");
             SDL_GetWindowSize(win, &app->windowW, &app->windowH);
+            app->surface = SDL_GetWindowSurface(app->window);
         }
     }
     return 0;
@@ -55,13 +56,14 @@ void App_AddThing(App* app, Thing* thing) {
 
 void App_Update(App* app) {
     SDL_Event e; 
+    int x = 1;
     while(app->quit == FALSE) {
         app->things[0].rect.w = app->windowW;
         app->things[0].rect.h = app->windowH;
 
         for(int i = 0; i < app->thingCount; i++) {
             Thing thing = app->things[i];
-            printf("%s: x:%d, y:%d\n", thing.name, thing.rect.w, thing.rect.h);
+            //printf("%s: x:%d, y:%d\n", thing.name, thing.rect.w, thing.rect.h);
             SDL_BlitScaled(thing.texture, NULL, app->surface, &thing.rect); 
         }
 
