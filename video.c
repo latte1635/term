@@ -18,7 +18,7 @@ void Video_Init(App* app) {
         printf("Couldn't initialize SDL: %s\n", SDL_GetError());
         exit(1);
     }
-
+    SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
     app->window = SDL_CreateWindow(
             app->windowName,
             SDL_WINDOWPOS_UNDEFINED,
