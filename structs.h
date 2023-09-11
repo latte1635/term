@@ -2,7 +2,6 @@
 #define __STRUCT_H__
 
 #include <SDL2/SDL.h>
-#include <SDL2/SDL_ttf.h>
 
 typedef struct THING {
     char* name;
