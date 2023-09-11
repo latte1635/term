@@ -75,7 +75,7 @@ void App_AddString(App* app, const wchar_t* string,
         int posX, int posY, int textScale, SDL_Color color) {
     for(int i = 0; i < wcslen(string); i++) {
         wchar_t c = GetUmlauts(string[i]);
-        wprintf(L"ascii: %c=%d\n", string[i], string[i]);
+        wprintf(L"ascii: %C=%d\n", string[i], string[i]);
         App_AddCharacter(app, c, posX + i * 10 * textScale, posY, textScale, color); 
     }
 }

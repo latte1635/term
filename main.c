@@ -16,7 +16,7 @@ int main(int argc, char* args[]) {
     SDL_Surface* siiliTex = LoadMedia("media/siilimakaa.bmp");
     Thing_Init(&siili, "siili", siiliRect, siiliTex);
     wprintf(L"muh ääkköset...\n");
-    wprintf(L"test: %c\n", L'ä');
+    wprintf(L"test: %C\n", L'Ä');
     SDL_Color textColor = (SDL_Color) {255, 255, 255, 255};
     //App_AddCharacter(&app, 'H', 50, 50, textColor); 
     App_AddString(&app, L"abcdefghijklmnopqrstuvwxyzåäö", 180, 200, 2, textColor);
